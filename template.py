@@ -32,15 +32,12 @@ list_of_files = [
 for file in list_of_files:
     file_path = Path(file)
     file_dir, file_name = os.path.split(file_path)
-    
-    print('file_dir:', file_dir)
-    print('file_name:', file_name)
-    
-    if filedir != '':
-        os.makedirs(file_dir)
+        
+    if file_dir != '':
+        os.makedirs(file_dir, exist_ok=True)
         logging.info(f'Creating directory: {file_dir} for the file: {file_name}')
     
-    if (not os.path.exists(file_dir))  or (not os.path.getsize(file_path) == 0):
+    if (not os.path.exists(file_path))  or (not os.path.getsize(file_path) == 0):
         with open(file_path, 'w') as f:
             pass
             logging.info(f'Creating empty file: {file_path}')
