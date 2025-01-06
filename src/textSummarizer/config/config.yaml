@@ -1,0 +1,8 @@
+# store path to other files in this file
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/entbappy/Branching-tutorial/raw/master/summarizer-data.zip
+  local_data_dir: artifacts/data_ingestion/samsumdata.zip
+  unzip_data_dir: artifacts/data_ingestion/
